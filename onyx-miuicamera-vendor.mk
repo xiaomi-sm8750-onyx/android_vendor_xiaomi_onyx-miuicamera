@@ -15,9 +15,12 @@ PRODUCT_PACKAGES += \
 # MiuiPrebuilts
 ifneq ($(filter true,$(WITH_MIUI)),)
 PRODUCT_PACKAGES += \
-    MiuiCalculator
+    MiuiCalculator \
+    MiuiGallery \
+    MiuiGalleryEditor
 endif
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    vendor/xiaomi/onyx-miuicamera/proprietary/system/permissions/privapp-permissions-miuicalculator.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-miuicalculator.xml
+    vendor/xiaomi/onyx-miuicamera/proprietary/system/permissions/privapp-permissions-miuicalculator.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-miuicalculator.xml \
+    vendor/xiaomi/onyx-miuicamera/proprietary/system/permissions/privapp-permissions-miuigallery.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-miuigallery.xml
