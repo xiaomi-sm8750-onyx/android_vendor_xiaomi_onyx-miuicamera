@@ -11,3 +11,13 @@ PRODUCT_PACKAGES += \
     libmicampostproc_client \
     vendor.xiaomi.hardware.campostproc@1.0 \
     MiuiCamera
+
+# MiuiPrebuilts
+ifneq ($(filter true,$(WITH_MIUI)),)
+PRODUCT_PACKAGES += \
+    MiuiCalculator
+endif
+
+# Permissions
+PRODUCT_COPY_FILES += \
+    vendor/xiaomi/onyx-miuicamera/proprietary/system/permissions/privapp-permissions-miuicalculator.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-miuicalculator.xml
