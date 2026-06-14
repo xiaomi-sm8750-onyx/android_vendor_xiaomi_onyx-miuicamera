@@ -11,3 +11,16 @@ PRODUCT_PACKAGES += \
     libmicampostproc_client \
     vendor.xiaomi.hardware.campostproc@1.0 \
     MiuiCamera
+
+# Conditionally build MiuiCalculator & MiuiGallery along with MiuiGalleryEditor
+ifneq ($(filter true,$(WITH_MIUI)),)
+PRODUCT_PACKAGES += \
+    MiuiCalculator \
+    MiuiGallery \
+    MiuiGalleryEditor
+endif
+
+# Permissions
+PRODUCT_COPY_FILES += \
+    vendor/xiaomi/onyx-miuicamera/proprietary/system/permissions/privapp-permissions-miuicalculator.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-miuicalculator.xml \
+    vendor/xiaomi/onyx-miuicamera/proprietary/system/permissions/privapp-permissions-miuigallery.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-miuigallery.xml
