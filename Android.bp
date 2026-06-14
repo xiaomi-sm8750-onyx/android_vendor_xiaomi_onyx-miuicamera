@@ -167,3 +167,21 @@ android_app_import {
     },
     privileged: true,
 }
+
+android_app_import {
+    name: "MiuiCalculator",
+    owner: "xiaomi",
+    apk: "proprietary/system/priv-app/MiuiCalculator/MiuiCalculator.apk",
+    preprocessed: true,
+    presigned: true,
+    overrides: [
+        "ExactCalculator",
+	"CalculatorGoogle",
+	"CalculatorGooglePrebuilt",
+	"CalculatorGooglePrebuilt_85006267",
+    ],
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
